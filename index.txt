@@ -6,3 +6,5 @@ php artisan make:seeder NameSeeder
 php artisan migrate:refresh --seed
 config/app.php - 'timezone' => 'Europe/Belgrade',
 Postman/headers-accept , application/json,
+php artisan make:resource EventResource,user,attendde.
+
