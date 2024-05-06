@@ -17,24 +17,16 @@ class EventController extends Controller
 
     private array $relations = ['user', 'attendees', 'attendees.user'];
 
-    /**
-     * Display a listing of the resource.
-     */
+
+    public function __construct()
+    {
+        $this->middleware('auth:sanctum')->except(['index', 'show']);
+    }
+
+   
     public function index()
     {
-        //return \App\Models\Event::all();
-        //return \App\Models\User::all();
-        //return Event::all();
-        //return EventResource::collection(Event::all());
-        // $query = Event::query();
-        // $relations = ['user', 'attendees', 'attendees.user'];
-
-        // foreach ($relations as $relation) {
-        //     $query->when(
-        //         $this->shouldIncludeRelation($relation),
-        //         fn($q) => $q->with($relation)
-        //     );
-        // }
+       
         $query = $this->loadRelationships(Event::query());
 
         return EventResource::collection(
@@ -70,7 +62,7 @@ class EventController extends Controller
                 'start_time' => 'required|date',
                 'end_time' => 'required|date|after:start_time'
             ]),
-            'user_id' => 1
+            'user_id' => $request->user()->id
         ]);
 
         return new EventResource($this->loadRelationships($event));
