@@ -10,6 +10,7 @@ use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 
+
 class AttendeeController extends Controller
 {
 
@@ -20,6 +21,7 @@ class AttendeeController extends Controller
     public function __construct()
     {
         $this->middleware('auth:sanctum')->except(['index', 'show', 'update']);
+        $this->authorizeResource(Attendee::class, 'attendee');
     }
 
 
