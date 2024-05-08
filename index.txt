@@ -10,5 +10,7 @@ php artisan make:resource EventResource,user,attendde.
 controllers>api>traits>CanLoadRelationships.php,
 php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider",
 php artisan make:controller Api/AuthController,
+AuthServiceProvider-gates and polices,
+
 
 
