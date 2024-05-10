@@ -13,8 +13,8 @@ php artisan make:controller Api/AuthController,
 AuthServiceProvider-gates and polices,
 php artisan make:policy EventPolicy --model=Event,
 php artisan make:policy AttenddePolicy --model=Attendee,
-php artisan make:command SendEventReminders => php artisan:send-event-reminders-cita sve iz function hendle,
+php artisan make:command SendEventReminders => php artisan:send-event-reminders  cita sve iz function hendle,
 php artisan schedule:work,
 
-
+php artisan make:notification EventReminderNotification,
 
