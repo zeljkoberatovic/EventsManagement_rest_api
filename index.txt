@@ -17,4 +17,5 @@ php artisan make:command SendEventReminders => php artisan:send-event-reminders 
 php artisan schedule:work,
 
 php artisan make:notification EventReminderNotification,
+php artisan queue:table => php artisan migrate,
 
